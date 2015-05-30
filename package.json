@@ -9,6 +9,9 @@
   "keywords": [
     "yeoman-generator"
   ],
-  "author": "",
-  "license": "MIT"
+  "repository": "ptz/generator-catberry",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^0.20.1"
+  }
 }
