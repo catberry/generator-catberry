@@ -2,10 +2,10 @@
 
 module.exports = Head;
 
-function Head($config) {
-    this._config = $config;
+function Head() {
+    //
 }
 
 Head.prototype.render = function () {
-    return this._config;
+    return {title: 'The Title'};
 };
