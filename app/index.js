@@ -1,6 +1,6 @@
 var yg = require('yeoman-generator');
 
-var templaters = {
+var tpls = {
     hbs: {
         name: 'Handlebars',
         package: 'catberry-handlebars',
@@ -24,21 +24,45 @@ module.exports = yg.Base.extend({
     },
     prompting: function () {
         this.answers = {
-            templater: 'hbs'
+            tpl: 'hbs'
         };
-        this.templater = templaters[this.answers.templater];
     },
     writing: function () {
-        var src = this.sourceRoot();
-        var dest = this.destinationRoot();
-        var ctx = {templater: this.templater};
-        this.fs.copyTpl(src, dest, ctx);
+        var tplSuffix = tpls[this.answers.tpl].suffix;
+        var context = {
+            suffix: tplSuffix
+        };
+        this.fs.copy(
+            this.templatePath('package.json'),
+            this.destinationPath('package.json'));
+        // document
+        this.fs.copyTpl(
+            this.templatePath('catberry_components/document/cat-component.json'),
+            this.destinationPath('catberry_components/document/cat-component.json'),
+            context);
+        this.fs.copy(
+            this.templatePath('catberry_components/document/document' + tplSuffix),
+            this.destinationPath('catberry_components/document/document' + tplSuffix));
+        this.fs.copy(
+            this.templatePath('catberry_components/document/index.js'),
+            this.destinationPath('catberry_components/document/index.js'));
+        // head
+        this.fs.copyTpl(
+            this.templatePath('catberry_components/head/cat-component.json'),
+            this.destinationPath('catberry_components/head/cat-component.json'),
+            context);
+        this.fs.copy(
+            this.templatePath('catberry_components/head/head' + tplSuffix),
+            this.destinationPath('catberry_components/head/head' + tplSuffix));
+        this.fs.copy(
+            this.templatePath('catberry_components/head/index.js'),
+            this.destinationPath('catberry_components/head/index.js'));
     },
     install: function () {
         var npmDeps = [
             'connect', 'serve-static', 'errorhandler',
-            'catberry', this.templater.package
+            'catberry', tpls[this.answers.tpl].package
         ];
-        this.npmInstall(npmDeps, {save: true});
+        //this.npmInstall(npmDeps, {save: true});
     }
 });
