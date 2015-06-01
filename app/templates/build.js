@@ -1,11 +1,8 @@
 'use strict';
 
-var isRelease = process.argv.length === 3 ?
-		process.argv[2] === 'release' : undefined,
-	templateEngine = require('catberry-handlebars'),
-	catberry = require('catberry'),
-	cat = catberry.create({isRelease: isRelease});
+var catberry = require('catberry'),
+    cat = catberry.create(),
+    catTpl = require('<%=package%>');
 
-templateEngine.register(cat.locator);
+catTpl.register(cat.locator);
 cat.build();
-
