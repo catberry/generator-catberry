@@ -43,6 +43,20 @@ module.exports = yg.Base.extend({
             this.templatePath('browser.js'),
             this.destinationPath('browser.js'),
             context);
+        // build
+        this.fs.copyTpl(
+            this.templatePath('build.js'),
+            this.destinationPath('build.js'),
+            context);
+        // server
+        this.fs.copyTpl(
+            this.templatePath('server.js'),
+            this.destinationPath('server.js'),
+            context);
+        // routes
+        this.fs.copy(
+            this.templatePath('routes.js'),
+            this.destinationPath('routes.js'));
         // document
         this.fs.copyTpl(
             this.templatePath('catberry_components/document/cat-component.json'),
