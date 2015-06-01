@@ -21,10 +21,11 @@ var tpls = {
 module.exports = yg.Base.extend({
     constructor: function () {
         yg.Base.apply(this, arguments);
+        this.option('tpl', {type: String, defaults: 'hbs'});
     },
     prompting: function () {
         this.answers = {
-            tpl: 'hbs'
+            tpl: this.options.tpl
         };
     },
     writing: function () {
