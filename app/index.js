@@ -29,58 +29,15 @@ module.exports = yg.Base.extend({
         };
     },
     writing: function () {
+        var TO = this.destinationRoot();
+        this.fs.copy(this.templatePath('copy'), TO);
         var tplSuffix = tpls[this.answers.tpl].suffix;
+        this.fs.copy(this.templatePath('tpls/**/*' + tplSuffix), TO);
         var tplPackage = tpls[this.answers.tpl].package;
-        var context = {
-            suffix: tplSuffix,
-            package: tplPackage
-        };
-        this.fs.copy(
-            this.templatePath('package.json'),
-            this.destinationPath('package.json'));
-        // browser
-        this.fs.copyTpl(
-            this.templatePath('browser.js'),
-            this.destinationPath('browser.js'),
-            context);
-        // build
-        this.fs.copyTpl(
-            this.templatePath('build.js'),
-            this.destinationPath('build.js'),
-            context);
-        // server
-        this.fs.copyTpl(
-            this.templatePath('server.js'),
-            this.destinationPath('server.js'),
-            context);
-        // routes
-        this.fs.copy(
-            this.templatePath('routes.js'),
-            this.destinationPath('routes.js'));
-        // document
-        this.fs.copyTpl(
-            this.templatePath('catberry_components/document/cat-component.json'),
-            this.destinationPath('catberry_components/document/cat-component.json'),
-            context);
-        this.fs.copy(
-            this.templatePath('catberry_components/document/document' + tplSuffix),
-            this.destinationPath('catberry_components/document/document' + tplSuffix));
-        this.fs.copy(
-            this.templatePath('catberry_components/document/index.js'),
-            this.destinationPath('catberry_components/document/index.js'));
-        // head
-        this.fs.copyTpl(
-            this.templatePath('catberry_components/head/cat-component.json'),
-            this.destinationPath('catberry_components/head/cat-component.json'),
-            context);
-        this.fs.copy(
-            this.templatePath('catberry_components/head/head' + tplSuffix),
-            this.destinationPath('catberry_components/head/head' + tplSuffix));
-        this.fs.copy(
-            this.templatePath('catberry_components/head/index.js'),
-            this.destinationPath('catberry_components/head/index.js'));
+        var context = {suffix: tplSuffix, package: tplPackage};
+        this.fs.copyTpl(this.templatePath('copyTpl'), TO, context);
     },
-    install: function () {
+    _install: function () {
         var npmDeps = [
             'connect', 'serve-static', 'errorhandler',
             'catberry', tpls[this.answers.tpl].package

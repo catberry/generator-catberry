@@ -1,5 +1,7 @@
 {
-  "license": "proprietary",
+  "description": " ",
+  "repository": ".",
+  "license": "WTFPL",
   "scripts": {
     "debug": "node build.js & node server.js"
   }
