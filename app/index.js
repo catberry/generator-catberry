@@ -30,12 +30,19 @@ module.exports = yg.Base.extend({
     },
     writing: function () {
         var tplSuffix = tpls[this.answers.tpl].suffix;
+        var tplPackage = tpls[this.answers.tpl].package;
         var context = {
-            suffix: tplSuffix
+            suffix: tplSuffix,
+            package: tplPackage
         };
         this.fs.copy(
             this.templatePath('package.json'),
             this.destinationPath('package.json'));
+        // browser
+        this.fs.copyTpl(
+            this.templatePath('browser.js'),
+            this.destinationPath('browser.js'),
+            context);
         // document
         this.fs.copyTpl(
             this.templatePath('catberry_components/document/cat-component.json'),
