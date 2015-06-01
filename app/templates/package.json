@@ -1,1 +1,6 @@
-{}
+{
+  "license": "proprietary",
+  "scripts": {
+    "debug": "node build.js & node server.js"
+  }
+}

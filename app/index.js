@@ -85,6 +85,6 @@ module.exports = yg.Base.extend({
             'connect', 'serve-static', 'errorhandler',
             'catberry', tpls[this.answers.tpl].package
         ];
-        //this.npmInstall(npmDeps, {save: true});
+        this.npmInstall(npmDeps, {save: true});
     }
 });
