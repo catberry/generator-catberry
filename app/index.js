@@ -21,7 +21,7 @@ var tpls = {
 module.exports = yg.Base.extend({
     constructor: function () {
         yg.Base.apply(this, arguments);
-        this.option('tpl', {type: String, defaults: 'hbs'});
+        this.option('tpl', {type: String, defaults: 'hbs', desc: 'Template engine to use'});
     },
     prompting: function () {
         this.answers = {
@@ -37,7 +37,7 @@ module.exports = yg.Base.extend({
         var context = {suffix: tplSuffix, package: tplPackage};
         this.fs.copyTpl(this.templatePath('copyTpl'), TO, context);
     },
-    _install: function () {
+    install: function () {
         var npmDeps = [
             'connect', 'serve-static', 'errorhandler',
             'catberry', tpls[this.answers.tpl].package
