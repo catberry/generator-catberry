@@ -1,3 +1,4 @@
 {
-  "template": "document<%=suffix%>"
+  "template": "document<%=suffix%>",
+  "logic": "document.js"
 }
