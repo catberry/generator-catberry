@@ -3,14 +3,14 @@ var yg = require('yeoman-generator');
 module.exports = yg.Base.extend({
     constructor: function () {
         yg.Base.apply(this, arguments);
-        var tes = require('./tes.js');
+        var cfg = require('../cfg.json');
         this.option('tpl', {
             type: String,
-            defaults: tes.default,
+            defaults: Object.keys(cfg.tes)[0],
             desc: 'Template engine to use'
         });
         var tpl = this.options.tpl;
-        this.te = tes.known[tpl];
+        this.te = cfg.tes[tpl]; //TODO: cfg.tes[tpl]?
         this.config.set({tpl: tpl});
     },
     //TODO: refactor

@@ -3,8 +3,8 @@ var yg = require('yeoman-generator');
 module.exports = yg.NamedBase.extend({
     constructor: function () {
         yg.NamedBase.apply(this, arguments);
-        var tes = require('../app/tes.js');
-        this.te = tes.known[this.config.get('tpl') || tes.default];
+        var cfg = require('../cfg.json');
+        this.te = cfg.tes[this.config.get('tpl') || Object.keys(cfg.tes)[0]];
     },
     writing: function () {
         var TO = this.destinationPath('catberry_components/' + this.name + '/');
