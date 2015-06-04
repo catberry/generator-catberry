@@ -14,7 +14,7 @@ module.exports = yg.Base.extend({
         var TO = this.destinationRoot();
         this.fs.copy(this.templatePath('copy'), TO);
         this.fs.copy(this.templatePath('tpls/**/*' + this.tpl.suffix), TO);
-        this.fs.copyTpl(this.templatePath('copyTpl'), TO, this.tpl);
+        this.fs.copyTpl(this.templatePath('copyTpl'), TO, {te: this.tpl});
     },
     install: function () {
         var npmDeps = [

@@ -1,4 +1,4 @@
 {
-  "template": "head<%=suffix%>",
+  "template": "head<%=te.suffix%>",
   "logic": "head.js"
 }
