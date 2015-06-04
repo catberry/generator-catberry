@@ -13,11 +13,21 @@ module.exports = yg.Base.extend({
         this.te = tes.known[tpl];
         this.config.set({tpl: tpl});
     },
+    //TODO: refactor
     writing: function () {
-        var TO = this.destinationRoot();
-        this.fs.copy(this.templatePath('copy'), TO);
-        this.fs.copy(this.templatePath('tpls/**/*' + this.te.suffix), TO);
-        this.fs.copyTpl(this.templatePath('copyTpl'), TO, {te: this.te});
+        var from = this.sourceRoot() + '/';
+        var to = this.destinationRoot() + '/';
+        this.fs.copy(from + '_gitignore', to + '.gitignore');
+        this.fs.copyTpl(from + 'gcat.js', to + 'gcat.js', {te: this.te});
+        this.fs.copy(from + '{browser.js,build.js,package.json,README.md,routes.js,server.js}', to);
+        // document
+        this.fs.copy(from + 'catberry_components/document/index.js', to + 'catberry_components/document/index.js');
+        this.fs.copy(from + 'catberry_components/document/template' + this.te.suffix, to + 'catberry_components/document/template' + this.te.suffix);
+        this.fs.writeJSON(to + 'catberry_components/document/cat-component.json', {template: 'template' + this.te.suffix});
+        // head
+        this.fs.copy(from + 'catberry_components/head/index.js', to + 'catberry_components/head/index.js');
+        this.fs.copy(from + 'catberry_components/head/template' + this.te.suffix, to + 'catberry_components/head/template' + this.te.suffix);
+        this.fs.writeJSON(to + 'catberry_components/head/cat-component.json', {template: 'template' + this.te.suffix});
     },
     install: function () {
         var npmDeps = [

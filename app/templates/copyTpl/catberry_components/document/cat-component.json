@@ -1,4 +1,0 @@
-{
-  "template": "document<%=te.suffix%>",
-  "logic": "document.js"
-}

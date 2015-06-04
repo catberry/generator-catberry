@@ -7,5 +7,7 @@ function Head() {
 }
 
 Head.prototype.render = function () {
-    return {title: 'The Title'};
+    return {
+        title: 'The Title'
+    };
 };
