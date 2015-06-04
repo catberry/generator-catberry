@@ -1,6 +1,6 @@
 module.exports = {
     default: 'hbs',
-    tpls: {
+    known: {
         hbs: {
             name: 'Handlebars',
             package: 'catberry-handlebars',
