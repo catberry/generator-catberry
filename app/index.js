@@ -16,20 +16,25 @@ module.exports = yg.Base.extend({
     },
     //see issue #5
     writing: function () {
+        //
         var ctx = this.ctx;
+        var aTpl = 'template' + ctx.te.suffix;
+        var catComponent = {template: aTpl};
+        //
         var from = this.sourceRoot() + '/';
         var to = this.destinationRoot() + '/';
+        //
         this.fs.copy(from + '_gitignore', to + '.gitignore');
         this.fs.copyTpl(from + 'gcat.js', to + 'gcat.js', ctx);
         this.fs.copy(from + '{browser.js,build.js,package.json,README.md,routes.js,server.js}', to);
         // document
         this.fs.copy(from + 'catberry_components/document/index.js', to + 'catberry_components/document/index.js');
-        this.fs.copy(from + 'catberry_components/document/template' + ctx.te.suffix, to + 'catberry_components/document/template' + ctx.te.suffix);
-        this.fs.writeJSON(to + 'catberry_components/document/cat-component.json', {template: 'template' + ctx.te.suffix});
+        this.fs.copy(from + 'catberry_components/document/' + aTpl, to + 'catberry_components/document/' + aTpl);
+        this.fs.writeJSON(to + 'catberry_components/document/cat-component.json', catComponent);
         // head
         this.fs.copy(from + 'catberry_components/head/index.js', to + 'catberry_components/head/index.js');
-        this.fs.copy(from + 'catberry_components/head/template' + ctx.te.suffix, to + 'catberry_components/head/template' + ctx.te.suffix);
-        this.fs.writeJSON(to + 'catberry_components/head/cat-component.json', {template: 'template' + ctx.te.suffix});
+        this.fs.copy(from + 'catberry_components/head/' + aTpl, to + 'catberry_components/head/' + aTpl);
+        this.fs.writeJSON(to + 'catberry_components/head/cat-component.json', catComponent);
     },
     install: function () {
         var ctx = this.ctx;
