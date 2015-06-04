@@ -17,20 +17,8 @@ function AStore($uhr) {
 AStore.prototype._uhr = null;
 
 /**
- * @type {number}
- */
-AStore.prototype.$lifetime = 60000;
-
-/**
  * @returns Remote data
  */
 AStore.prototype.load = function () {
-    //
-};
-
-/**
- * @returns Action response
- */
-AStore.prototype.handleSomeAction = function () {
     //
 };
