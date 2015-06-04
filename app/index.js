@@ -13,7 +13,7 @@ module.exports = yg.Base.extend({
         this.te = cfg.tes[tpl]; //TODO: cfg.tes[tpl]?
         this.config.set({tpl: tpl});
     },
-    //TODO: refactor
+    //see issue #5
     writing: function () {
         var from = this.sourceRoot() + '/';
         var to = this.destinationRoot() + '/';
