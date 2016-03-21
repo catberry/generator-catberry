@@ -1,0 +1,49 @@
+{
+  "name": "generator-catberry",
+  "version": "0.0.0",
+  "description": "Catberry",
+  "homepage": "https://github.com/ptz/generator-catberry",
+  "author": {
+    "name": "Sasha Go",
+    "email": "ptytza@ya.ru",
+    "url": "https://github.com/ptz"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "catberry",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.21.1",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "yeoman-assert": "^2.0.0",
+    "eslint": "^2.1.0",
+    "eslint-config-xo-space": "^0.10.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "ptz/generator-catberry",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
