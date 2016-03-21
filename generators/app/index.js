@@ -10,7 +10,7 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the scrumtrulescent ' + chalk.red('generator-catberry') + ' generator!'
     ));
 
-    var prompts = [/*{
+    var prompts = [/* {
       type: 'confirm',
       name: 'someOption',
       message: 'Would you like to enable this option?',
