@@ -1,9 +1,0 @@
-{
-  "description": "?",
-  "repository": ".",
-  "license": "WTFPL",
-  "scripts": {
-    "debug": "node build.js & node server.js",
-    "release": "node build.js release && node server.js release"
-  }
-}
