@@ -5,18 +5,16 @@ var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
 
+  constructor: function () {
+    yeoman.generators.Base.apply(this, arguments);
+    this.argument('appTemplate', {type: String, defaults: 'empty-handlebars'});
+  },
+
   prompting: function () {
     this.log(yosay(
       'Welcome to the scrumtrulescent ' + chalk.red('generator-catberry') + ' generator!'
     ));
-
-    var prompts = [/* {
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }*/];
-
+    var prompts = [];
     var done = this.async();
     this.prompt(prompts, function (props) {
       // To access props later use this.props.someOption;
@@ -27,8 +25,8 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath(this.appTemplate + '/**/*'),
+      this.destinationRoot()
     );
   },
 
