@@ -13,7 +13,7 @@ describe('generator-catberry:app', function () {
 
   it('creates files', function () {
     assert.file([
-      // 'dummyfile.txt'
+      'package.json'
     ]);
   });
 });

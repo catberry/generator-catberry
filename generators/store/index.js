@@ -1,7 +1,5 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
 
@@ -10,29 +8,11 @@ module.exports = yeoman.generators.Base.extend({
     this.argument('storeName', {type: String, required: true});
   },
 
-  prompting: function () {
-    this.log(yosay(
-      'Welcome to the cat\'s pajamas ' + chalk.red('generator-catberry') + ' generator!'
-    ));
-    var prompts = [];
-    var done = this.async();
-    this.prompt(prompts, function (props) {
-      // To access props later use this.props.someOption;
-      this.props = props;
-      done();
-    }.bind(this));
-  },
-
   writing: function () {
-    // this.fs.copy(
-    //   this.templatePath('dummyfile.txt'),
-    //   this.destinationPath('dummyfile.txt')
-    // );
-    this.spawnCommandSync(this.sourceRoot() + '/../../../node_modules/.bin/catberry', ['addstore', this.storeName]);
-  },
-
-  install: function () {
-    // this.installDependencies();
+    this.fs.copy(
+      this.templatePath('Store.js'),
+      this.destinationPath('catberry_stores/' + this.storeName + '.js')
+    );
   }
 
 });

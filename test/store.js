@@ -6,7 +6,7 @@ var helpers = require('yeoman-generator').test;
 describe('generator-catberry:store', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/store'))
-      .withArguments(['test'])
+      .withArguments(['Test'])
       .withOptions({})
       .withPrompts({})
       .on('end', done);
