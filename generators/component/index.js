@@ -10,8 +10,10 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    // this.spawnCommandSync(this.sourceRoot() + '/../../../node_modules/.bin/catberry',
-    //   ['addcomp', '--preset', this.options.preset, this.componentName]);
+    this.fs.copy(
+      this.templatePath('component-' + this.options.preset + '/**/*'),
+      this.destinationPath('catberry_components/' + this.componentName)
+    );
   }
 
 });
