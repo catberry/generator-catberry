@@ -1,11 +1,11 @@
 'use strict';
 var path = require('path');
 var assert = require('yeoman-assert');
-var helpers = require('yeoman-generator').test;
+var test = require('yeoman-test');
 
 describe('generator-catberry:store', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/store'))
+    test.run(path.join(__dirname, '../generators/store'))
       .withArguments(['Test'])
       .withOptions({})
       .withPrompts({})

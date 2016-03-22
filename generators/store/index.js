@@ -1,10 +1,11 @@
 'use strict';
-var yeoman = require('yeoman-generator');
 
-module.exports = yeoman.generators.Base.extend({
+var BaseGenerator = require('yeoman-generator').Base;
+
+module.exports = BaseGenerator.extend({
 
   constructor: function () {
-    yeoman.generators.Base.apply(this, arguments);
+    BaseGenerator.apply(this, arguments);
     this.argument('storeName', {type: String, required: true});
   },
 
