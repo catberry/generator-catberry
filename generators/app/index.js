@@ -24,11 +24,10 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    // this.fs.copy(
-    //   this.templatePath('dummyfile.txt'),
-    //   this.destinationPath('dummyfile.txt')
-    // );
-    this.spawnCommandSync(this.sourceRoot() + '/../../../node_modules/.bin/catberry', ['init', this.appTemplate]);
+    this.fs.copy(
+      this.templatePath(this.appTemplate + '/**/*'),
+      this.destinationRoot()
+    );
   },
 
   install: function () {
