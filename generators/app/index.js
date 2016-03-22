@@ -14,7 +14,6 @@ module.exports = yeoman.generators.Base.extend({
     this.log(yosay(
       'Welcome to the scrumtrulescent ' + chalk.red('generator-catberry') + ' generator!'
     ));
-
     var prompts = [];
     var done = this.async();
     this.prompt(prompts, function (props) {
