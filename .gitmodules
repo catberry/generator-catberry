@@ -1,0 +1,12 @@
+[submodule "generators/app/templates/empty-handlebars"]
+	path = generators/app/templates/empty-handlebars
+	url = https://github.com/catberry/catberry-hello-world-handlebars.git
+[submodule "generators/app/templates/empty-dust"]
+	path = generators/app/templates/empty-dust
+	url = https://github.com/catberry/catberry-hello-world-dust.git
+[submodule "generators/app/templates/empty-jade"]
+	path = generators/app/templates/empty-jade
+	url = https://github.com/catberry/catberry-hello-world-jade.git
+[submodule "generators/app/templates/example"]
+	path = generators/app/templates/example
+	url = https://github.com/catberry/catberry-example.git
