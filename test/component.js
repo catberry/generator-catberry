@@ -6,7 +6,7 @@ var test = require('yeoman-test');
 describe('generator-catberry:component', function () {
   before(function (done) {
     test.run(path.join(__dirname, '../generators/component'))
-      .withArguments(['test'])
+      .withArguments(['i_like.SNAKES'])
       .withOptions({})
       .withPrompts({})
       .on('end', done);
@@ -14,7 +14,7 @@ describe('generator-catberry:component', function () {
 
   it('creates files', function () {
     assert.file([
-      'catberry_components/test/index.js'
+      'catberry_components/i-like-snakes/index.js'
     ]);
   });
 });

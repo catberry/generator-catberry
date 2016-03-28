@@ -16,7 +16,7 @@ module.exports = BaseGenerator.extend({
       this.templatePath('Store.js'),
       this.destinationPath('catberry_stores/' + name + '.js'),
       {
-        process: function (buf) {
+        process: function (buf) { // TODO: extract and optimize
           return buf.toString().replace(/__pascalName__/g, name);
         }
       }
