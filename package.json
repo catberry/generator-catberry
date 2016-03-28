@@ -17,6 +17,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "pascal-case": "^1.1.2",
     "yeoman-generator": "^0.22.5"
   },
   "devDependencies": {

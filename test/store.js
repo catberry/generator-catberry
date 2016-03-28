@@ -6,7 +6,7 @@ var test = require('yeoman-test');
 describe('generator-catberry:store', function () {
   before(function (done) {
     test.run(path.join(__dirname, '../generators/store'))
-      .withArguments(['Test'])
+      .withArguments(['aShiny-metal_store'])
       .withOptions({})
       .withPrompts({})
       .on('end', done);
@@ -14,7 +14,7 @@ describe('generator-catberry:store', function () {
 
   it('creates files', function () {
     assert.file([
-      'catberry_stores/Test.js'
+      'catberry_stores/AShinyMetalStore.js'
     ]);
   });
 });
