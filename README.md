@@ -37,7 +37,7 @@ See [catberry-cli](https://github.com/catberry/catberry-cli#add-cat-component-in
 
 [npm-image]: https://badge.fury.io/js/generator-catberry.svg
 [npm-url]: https://npmjs.org/package/generator-catberry
-[travis-image]: https://travis-ci.org/ptz/generator-catberry.svg?branch=master
-[travis-url]: https://travis-ci.org/ptz/generator-catberry
-[daviddm-image]: https://david-dm.org/ptz/generator-catberry.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/ptz/generator-catberry
+[travis-image]: https://travis-ci.org/catberry/generator-catberry.svg?branch=master
+[travis-url]: https://travis-ci.org/catberry/generator-catberry
+[daviddm-image]: https://david-dm.org/catberry/generator-catberry.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/catberry/generator-catberry
