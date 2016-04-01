@@ -13,15 +13,14 @@ module.exports = BaseGenerator.extend({
   },
 
   writing: function () {
-    var pasName = pascase(this.componentName);
-    var parName = parcase(this.componentName);
-    this.fs.copy(
+    var className = pascase(this.componentName);
+    var name = parcase(this.componentName);
+    this.fs.copyTpl(
       this.templatePath('component-' + this.options.preset + '/**/*'),
-      this.destinationPath('catberry_components/' + parName),
+      this.destinationPath('catberry_components/' + name),
       {
-        process: function (buf) { // TODO: extract and optimize
-          return buf.toString().replace(/__pascalName__/g, pasName).replace(/__name__/g, parName);
-        }
+        __pascalName__: className,
+        __name__: name
       }
     );
   }
