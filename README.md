@@ -1,4 +1,4 @@
-# Yeoman generator for [Catberry](http://catberry.org/)
+# Yeoman generator for [Catberry Framework](http://catberry.org/)
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
