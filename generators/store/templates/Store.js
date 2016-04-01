@@ -9,7 +9,7 @@
 class <%= __pascalName__ %> {
 
 	/**
-	 * Creates a new instance of the "__pascalName__" store.
+	 * Creates a new instance of the "<%= __pascalName__ %>" store.
 	 * @param {ServiceLocator} locator The service locator for resolving dependencies.
 	 */
 	constructor(locator) {
