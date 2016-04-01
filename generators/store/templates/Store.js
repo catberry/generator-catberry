@@ -6,7 +6,7 @@
  * http://catberry.org/documentation#stores-interface
  */
 
-class __pascalName__ {
+class <%= __pascalName__ %> {
 
 	/**
 	 * Creates a new instance of the "__pascalName__" store.
@@ -37,4 +37,4 @@ class __pascalName__ {
 	}
 }
 
-module.exports = __pascalName__;
+module.exports = <%= __pascalName__ %>;

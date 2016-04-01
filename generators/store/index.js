@@ -12,13 +12,11 @@ module.exports = BaseGenerator.extend({
 
   writing: function () {
     var name = pcase(this.storeName);
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('Store.js'),
       this.destinationPath('catberry_stores/' + name + '.js'),
       {
-        process: function (buf) { // TODO: extract and optimize
-          return buf.toString().replace(/__pascalName__/g, name);
-        }
+        __pascalName__: name
       }
     );
   }
