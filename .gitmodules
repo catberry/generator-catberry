@@ -10,6 +10,3 @@
 [submodule "generators/app/templates/example"]
 	path = generators/app/templates/example
 	url = https://github.com/catberry/catberry-example.git
-[submodule "generators/component/templates"]
-	path = generators/component/templates
-	url = https://github.com/ptz/catberry-module-presets.git
