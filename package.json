@@ -1,6 +1,6 @@
 {
   "name": "generator-catberry",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Yeoman generator for Catberry Framework",
   "homepage": "https://github.com/catberry/generator-catberry",
   "files": [
