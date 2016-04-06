@@ -1,8 +1,6 @@
-# Yeoman generator for [Catberry Framework](http://catberry.org/)
+# Catberry Framework generator [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-[![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
+> Yeoman generator for Catberry Framework
 
 ## Install
 
