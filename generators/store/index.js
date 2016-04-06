@@ -1,22 +1,22 @@
 'use strict';
 
 var BaseGenerator = require('yeoman-generator').Base;
-var pcase = require('pascal-case');
+var pascalize = require('pascal-case');
 
 module.exports = BaseGenerator.extend({
 
   constructor: function () {
     BaseGenerator.apply(this, arguments);
-    this.argument('storeName', {type: String, required: true});
+    this.argument('name', {type: String, required: true});
   },
 
   writing: function () {
-    var name = pcase(this.storeName);
+    var clazz = pascalize(this.name);
     this.fs.copyTpl(
-      this.templatePath('Store.js'),
-      this.destinationPath('catberry_stores/' + name + '.js'),
+      this.templatePath('Store.ejs'),
+      this.destinationPath('catberry_stores/' + clazz + '.js'),
       {
-        __pascalName__: name
+        clazz: clazz
       }
     );
   }

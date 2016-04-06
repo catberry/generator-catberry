@@ -1,16 +1,12 @@
 'use strict';
 
 /*
- * This is a Catberry store file.
- * More details can be found here
- * http://catberry.org/documentation#stores-interface
+ * @see http://catberry.org/documentation#stores-interface
  */
-
-class <%= __pascalName__ %> {
+class <%= clazz %> {
 
   /**
-   * Creates a new instance of the "<%= __pascalName__ %>" store.
-   * @param {ServiceLocator} locator The service locator for resolving dependencies.
+   * @param {ServiceLocator} locator Dependency resolver
    */
   constructor(locator) {
 
@@ -37,4 +33,4 @@ class <%= __pascalName__ %> {
 }
 }
 
-module.exports = <%= __pascalName__ %>;
+module.exports = <%= clazz %>;
