@@ -14,10 +14,9 @@ npm install generator-catberry -g
 ```bash
 mkdir my-new-catberry-app
 cd my-new-catberry-app
-yo catberry [<appTemplate>]
+yo catberry -h # See usage notes
+yo catberry [options] [<appName>]
 ```
-
-See [catberry-cli](https://github.com/catberry/catberry-cli#create-catberry-applications-using-a-project-template) for available app templates, `empty-handlebars` is default.
 
 ## Generate a store
 
