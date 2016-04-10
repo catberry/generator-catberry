@@ -16,6 +16,7 @@ module.exports = BaseGenerator.extend({
       this.templatePath(this.options.preset + '/**/*'),
       this.destinationRoot()
     );
+    this.fs.extendJSON(this.destinationPath('package.json'), {name: this.appName});
   },
 
   install: function () {
