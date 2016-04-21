@@ -19,16 +19,16 @@ yo catberry [--preset=handlebars | dust | jade | example] [<appName>]
 
 Presets are
 <dl>
-  <dt>`handlebars` (default)</dt>
+  <dt><code>handlebars</code> (default)</dt>
   <dd>Empty project with [Handlebars](https://github.com/catberry/catberry-handlebars#readme) as template engine</dd>
 
-  <dt>`dust`</dt>
+  <dt><code>dust</code></dt>
   <dd>Empty project with [Dust](https://github.com/catberry/catberry-dust#readme) as template engine</dd>
 
-  <dt>`jade`</dt>
+  <dt><code>jade</code></dt>
   <dd>Empty project with [Jade](https://github.com/catberry/catberry-jade#readme) as template engine</dd>
 
-  <dt>`example`</dt>
+  <dt><code>example</code></dt>
   <dd>Complete example that uses GitHub API and almost all Catberry features</dd>
 </dl>
 
