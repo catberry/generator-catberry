@@ -6,14 +6,17 @@ module.exports = BaseGenerator.extend({
 
   constructor: function () {
     BaseGenerator.apply(this, arguments);
-    this.argument('appTemplate', {type: String, defaults: 'empty-handlebars'});
+    this.option('preset', {desc: 'App preset: dust | example | handlebars | jade', alias: 'p', defaults: 'handlebars'});
+    this.argument('appName', {desc: 'App name', required: false, defaults: this.appname});
   },
 
   writing: function () {
+    this.log('App name = ' + this.appName);
     this.fs.copy(
-      this.templatePath(this.appTemplate + '/**/*'),
+      this.templatePath(this.options.preset + '/**/*'),
       this.destinationRoot()
     );
+    this.fs.extendJSON(this.destinationPath('package.json'), {name: this.appName});
   },
 
   install: function () {
