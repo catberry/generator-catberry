@@ -20,9 +20,9 @@ class <%= __pascalName__ %> {
 	 * This method is optional.
 	 * @returns {Promise<Object>|Object|null|undefined} The data context for the template engine.
 	 */
-	render() {
-
-	}
+  render() {
+    return this.$context.getStoreData();
+  }
 
 	/**
 	 * Returns event binding settings for the component.
