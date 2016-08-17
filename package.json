@@ -12,9 +12,9 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "param-case": "^1.1.2",
-    "pascal-case": "^1.1.2",
-    "yeoman-generator": "^0.23.3"
+    "param-case": "^2.1.0",
+    "pascal-case": "^2.0.0",
+    "yeoman-generator": "^0.24.1"
   },
   "devDependencies": {
     "yeoman-assert": "^2.1.1",

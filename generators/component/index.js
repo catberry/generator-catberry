@@ -1,8 +1,8 @@
 'use strict';
 
 var BaseGenerator = require('yeoman-generator').Base;
-var pascase = require('pascal-case');
-var parcase = require('param-case');
+var pascalize = require('pascal-case');
+var paramCase = require('param-case');
 
 module.exports = BaseGenerator.extend({
 
@@ -13,8 +13,8 @@ module.exports = BaseGenerator.extend({
   },
 
   writing: function () {
-    var className = pascase(this.componentName);
-    var name = parcase(this.componentName);
+    var className = pascalize(this.componentName);
+    var name = paramCase(this.componentName);
     this.fs.copyTpl(
       this.templatePath('component-' + this.options.preset + '/**/*'),
       this.destinationPath('catberry_components/' + name),
