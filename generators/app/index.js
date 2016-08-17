@@ -11,12 +11,14 @@ module.exports = BaseGenerator.extend({
   },
 
   writing: function () {
-    this.log('App name = ' + this.appName);
+    var appName = this.appName, preset = this.options.preset;
+    this.log('App name = ' + appName);
+    this.config.set('preset', preset);
     this.fs.copy(
-      this.templatePath(this.options.preset + '/**/*'),
+      this.templatePath(preset + '/**/*'),
       this.destinationRoot()
     );
-    this.fs.extendJSON(this.destinationPath('package.json'), {name: this.appName});
+    this.fs.extendJSON(this.destinationPath('package.json'), {name: appName});
   },
 
   install: function () {
