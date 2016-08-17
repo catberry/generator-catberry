@@ -16,7 +16,7 @@ module.exports = BaseGenerator.extend({
     var className = pascalize(this.componentName);
     var name = paramCase(this.componentName);
     var preset = this.options.preset;
-    var tplPreset = (preset == 'example' ? 'handlebars' : preset);
+    var tplPreset = (preset === 'example' ? 'handlebars' : preset);
     this.fs.copyTpl(
       this.templatePath('component-' + tplPreset + '/**/*'),
       this.destinationPath('catberry_components/' + name),
