@@ -11,7 +11,8 @@ module.exports = BaseGenerator.extend({
   },
 
   writing: function () {
-    var appName = this.appName, preset = this.options.preset;
+    var appName = this.appName;
+    var preset = this.options.preset;
     this.log('App name = ' + appName);
     this.config.set('preset', preset);
     this.fs.copy(
