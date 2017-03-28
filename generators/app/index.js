@@ -6,7 +6,7 @@ module.exports = BaseGenerator.extend({
 
   constructor: function () {
     BaseGenerator.apply(this, arguments);
-    this.option('preset', {desc: 'App preset: dust | example | handlebars | jade', alias: 'p', defaults: 'handlebars'});
+    this.option('preset', {desc: 'App preset: dust | example | handlebars | pug', alias: 'p', defaults: 'handlebars'});
     this.argument('appName', {desc: 'App name', required: false, defaults: this.appname});
   },
 
