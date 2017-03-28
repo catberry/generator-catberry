@@ -4,9 +4,9 @@
 [submodule "app-dust"]
 	path = generators/app/templates/dust
 	url = https://github.com/catberry/catberry-hello-world-dust.git
-[submodule "app-jade"]
-	path = generators/app/templates/jade
-	url = https://github.com/catberry/catberry-hello-world-jade.git
 [submodule "app-example"]
 	path = generators/app/templates/example
 	url = https://github.com/catberry/catberry-example.git
+[submodule "generators/app/templates/pug"]
+	path = generators/app/templates/pug
+	url = https://github.com/catberry/catberry-hello-world-pug.git

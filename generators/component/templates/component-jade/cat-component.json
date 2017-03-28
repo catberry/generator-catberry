@@ -1,5 +1,5 @@
 {
-	"name": "<%= __name__ %>",
-	"template": "./template.jade",
-	"errorTemplate": "./error.jade"
+  "name": "<%= __name__ %>",
+  "template": "./template.pug",
+  "errorTemplate": "./error.pug"
 }
