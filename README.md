@@ -17,7 +17,7 @@ Presets are
 * `handlebars` Empty project with [Handlebars](https://github.com/catberry/catberry-handlebars#readme) as template engine
 (default preset)
 * `dust` Empty project with [Dust](https://github.com/catberry/catberry-dust#readme) as template engine
-* `jade` Empty project with [Jade](https://github.com/catberry/catberry-jade#readme) as template engine
+* `pug` Empty project with [Pug](https://github.com/catberry/catberry-pug#readme) as template engine
 * `example` Complete [example application](https://github.com/catberry/catberry-example#readme)
 
 ## Generate a store
@@ -29,7 +29,7 @@ yo catberry:store <storeName>
 ```
 yo catberry:component [--preset=<preset>] <componentName>
 ```
-Where `preset` is `handlebars`, `dust` or `jade`. If omitted, app preset is used (`handlebars` for `example`).
+Where `preset` is `handlebars`, `dust` or `pug`. If omitted, app preset is used (`handlebars` for `example`).
 
 [npm-image]: https://badge.fury.io/js/generator-catberry.svg
 [npm-url]: https://npmjs.org/package/generator-catberry
